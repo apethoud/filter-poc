@@ -1,1 +1,11 @@
-/* You can add global styles to this file, and also import other style files */
+.title-wrapper {
+  display: flex;
+  justify-content: center;
+  padding: 16px 0;
+  border-bottom: 1px solid #123;
+}
+
+.title-text {
+  font-family: sans-serif;
+  font-size: 36px;
+}
