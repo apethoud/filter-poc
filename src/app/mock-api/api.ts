@@ -1,6 +1,7 @@
 import { IColor } from '../models/color';
+import { IBooleanFilterOption, IStringFilterOption } from '../models/filter';
 
-export const brightnessOptions = [
+export const brightnessOptions: IStringFilterOption[] = [
   {
     id: 1,
     value: 'light',
@@ -13,7 +14,7 @@ export const brightnessOptions = [
   },
 ];
 
-export const warmHueOptions = [
+export const warmHueOptions: IStringFilterOption[] = [
   {
     id: 1,
     value: 'red',
@@ -31,7 +32,7 @@ export const warmHueOptions = [
   },
 ];
 
-export const coolHueOptions = [
+export const coolHueOptions: IStringFilterOption[] = [
   {
     id: 1,
     value: 'green',
@@ -49,7 +50,7 @@ export const coolHueOptions = [
   },
 ];
 
-export const triadHueOptions = [
+export const triadHueOptions: IStringFilterOption[] = [
   {
     id: 1,
     value: 'red',
@@ -64,6 +65,19 @@ export const triadHueOptions = [
     id: 3,
     value: 'blue',
     name: 'Blue',
+  },
+];
+
+export const booleanOptions: IBooleanFilterOption[] = [
+  {
+    id: 1,
+    value: true,
+    name: 'True',
+  },
+  {
+    id: 1,
+    value: false,
+    name: 'False',
   },
 ];
 
