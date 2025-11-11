@@ -1,3 +1,5 @@
+import { IColor } from '../models/color';
+
 export const brightnessOptions = [
   {
     id: 1,
@@ -65,7 +67,7 @@ export const triadHueOptions = [
   },
 ];
 
-export const colorOptions = [
+export const colorOptions: IColor[] = [
   {
     id: 1,
     hue: 'red',
