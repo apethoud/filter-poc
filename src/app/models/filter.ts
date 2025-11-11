@@ -19,17 +19,16 @@ export enum FilterTypeEnum {
   NamedAfterAFood = 'Named After a Food',
 }
 
-export interface IStringFilterObservables {
-  optionsObservable: Observable<IStringFilterOption[]>;
-  selectedOptionsObservable: Observable<number[]>;
-}
+export type FilterObservables =
+  | {
+      kind: 'string';
+      optionsObservable: Observable<IStringFilterOption[]>;
+      selectedOptionsObservable: Observable<number[]>;
+    }
+  | {
+      kind: 'boolean';
+      optionsObservable: Observable<IBooleanFilterOption[]>;
+      selectedOptionsObservable: Observable<number[]>;
+    };
 
-export interface IBooleanFilterObservables {
-  optionsObservable: Observable<IBooleanFilterOption[]>;
-  selectedOptionsObservable: Observable<number[]>;
-}
-
-export type FilterListType = Map<
-  FilterTypeEnum,
-  IStringFilterObservables | IBooleanFilterObservables
->;
+export type FilterListType = Map<FilterTypeEnum, FilterObservables>;

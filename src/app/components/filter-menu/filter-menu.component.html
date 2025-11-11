@@ -1,1 +1,5 @@
-<div class="filter-menu-container"></div>
+<div class="filter-menu-container">
+  @if (showBrightnessFilter) {
+  <app-brightness-filter [filterData]="brightnessFilterData" />
+  }
+</div>
