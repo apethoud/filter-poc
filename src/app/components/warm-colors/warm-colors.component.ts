@@ -3,11 +3,12 @@ import { colorOptions } from '../../mock-api/api';
 import { IColor } from '../../models/color';
 import { ColorSwatchComponent } from '../color-swatch/color-swatch.component';
 import { colorNameAlphabeticSorter } from '../../utils/utils';
+import { FilterMenuComponent } from '../filter-menu/filter-menu.component';
 
 @Component({
   selector: 'app-warm-colors',
   standalone: true,
-  imports: [ColorSwatchComponent],
+  imports: [ColorSwatchComponent, FilterMenuComponent],
   templateUrl: './warm-colors.component.html',
   styleUrl: './warm-colors.component.css',
 })

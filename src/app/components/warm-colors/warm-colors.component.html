@@ -1,8 +1,13 @@
-<div class="title-container">
-  <div class="title-text">Warm Colors</div>
-</div>
-<div class="content-container">
-  @for (color of colors; track color.id) {
-  <app-color-swatch [color]="color" />
-  }
+<div class="page-container">
+  <div class="page-content">
+    <div class="title-container">
+      <div class="title-text">Warm Colors</div>
+    </div>
+    <div class="content-container">
+      @for (color of colors; track color.id) {
+      <app-color-swatch [color]="color" />
+      }
+    </div>
+  </div>
+  <app-filter-menu />
 </div>

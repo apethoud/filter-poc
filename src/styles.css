@@ -4,8 +4,6 @@
 }
 
 .root-left-pane {
-  width: 300px;
-  background-color: #f5f5f5;
 }
 
 .root-right-pane {
@@ -18,9 +16,11 @@
 .nav-container {
   display: flex;
   flex-direction: column;
-  height: 100vw;
+  height: 100vh;
   border: 1px solid black;
   padding: 8px;
+  width: 300px;
+  background-color: #f5f5f5;
 }
 
 .nav-button {
@@ -38,6 +38,10 @@
 }
 
 /* Content */
+.page-container {
+  display: flex;
+}
+
 .title-container {
   display: flex;
   justify-content: center;
@@ -64,4 +68,16 @@
 .color-swatch-text {
   font-size: 24px;
   font-family: sans-serif;
+}
+
+/* Filter Menu */
+
+.filter-menu-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 500px;
+  border: 1px solid black;
+  padding: 8px;
+  background-color: #f5f5f5;
 }
