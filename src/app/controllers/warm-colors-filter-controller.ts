@@ -7,7 +7,7 @@ import {
   IStringFilterOption,
 } from '../models/filter';
 
-export class WarmColorsController {
+export class WarmColorsFilterController {
   allBrightnessOptions$: Observable<IStringFilterOption[]>;
   selectedBrightnessOptions$: Observable<number[]>;
   private readonly _allBrightnessOptionsSubject = new Subject<
