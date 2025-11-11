@@ -71,12 +71,29 @@
 }
 
 /* Filter Menu */
+select,
+::picker(select) {
+  appearance: base-select;
+}
+
+option::checkmark {
+  content: "☑️";
+}
+
 .filter-menu-container {
   display: flex;
   flex-direction: column;
   height: 100vh;
-  width: 500px;
+  width: 300px;
   border: 1px solid black;
-  padding: 8px;
+  padding: 16px;
   background-color: #f5f5f5;
+}
+
+.filter-dropdown {
+  padding: 8px;
+  border: 2px solid black;
+  border-radius: 8px;
+  font-size: 24px;
+  width: 100%;
 }
