@@ -1,5 +1,6 @@
 import { Observable, BehaviorSubject } from 'rxjs';
 import {
+  FilterKind,
   FilterListType,
   FilterTypeEnum,
   IStringFilterOption,
@@ -28,13 +29,20 @@ export class WarmColorsFilterController {
       [
         FilterTypeEnum.Brightness,
         {
-          kind: 'string',
+          kind: FilterKind.String,
           optionsObservable: this.allBrightnessOptions$,
           selectedOptionsObservable: this.selectedBrightnessOptions$,
+          selectedOptionsUpdater: this.updateSelectedBrightnessOptions,
         },
       ],
     ]);
 
     this._allBrightnessOptionsSubject.next(brightnessOptions);
   }
+
+  updateSelectedBrightnessOptions = (selectedIndexes: number[]): void => {
+    console.log('updateSelectedBrightnessOptions called');
+    console.log('selectedIndexes: ', selectedIndexes);
+    this._selectedBrightnessOptionsSubject.next(selectedIndexes);
+  };
 }

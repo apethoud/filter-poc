@@ -1,6 +1,7 @@
-<select class="filter-dropdown">
+<label class="filter-dropdown-label">{{ filterName }}</label>
+<select class="filter-dropdown" [(ngModel)]="selectedValue">
   @for (option of options; track option.id) {
-  <option [value]="option.value">
+  <option [value]="$index">
     {{ option.name }}
   </option>
   }

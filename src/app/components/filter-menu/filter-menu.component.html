@@ -1,5 +1,9 @@
 <div class="filter-menu-container">
   @if (showBrightnessFilter) {
-  <app-brightness-filter [filterData]="brightnessFilterData" />
+  <app-brightness-filter
+    [filterData]="brightnessFilterData"
+    [triggerSave]="triggerSave$"
+  />
   }
+  <button (click)="triggerSaveAction()">Save</button>
 </div>

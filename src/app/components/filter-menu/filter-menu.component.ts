@@ -5,6 +5,7 @@ import {
   FilterObservables,
   FilterTypeEnum,
 } from '../../models/filter';
+import { Subject } from 'rxjs';
 
 @Component({
   selector: 'app-filter-menu',
@@ -15,6 +16,7 @@ import {
 })
 export class FilterMenuComponent implements OnInit {
   @Input({ required: true }) filterList?: FilterListType;
+  readonly triggerSave$ = new Subject<void>();
 
   showBrightnessFilter?: boolean;
 
@@ -35,4 +37,8 @@ export class FilterMenuComponent implements OnInit {
       this.brightnessFilterData = brightnessFilterData;
     }
   }
+
+  triggerSaveAction = () => {
+    this.triggerSave$.next();
+  };
 }
