@@ -4,7 +4,7 @@ import { IColor } from '../../models/color';
 import { ColorSwatchComponent } from '../color-swatch/color-swatch.component';
 import { colorNameAlphabeticSorter } from '../../utils/utils';
 import { FilterMenuComponent } from '../filter-menu/filter-menu.component';
-import { ColorFilterController } from '../../controllers/color-filter-controller';
+import { DeviceFilterController } from '../../controllers/device-filter-controller';
 
 @Component({
   selector: 'app-color',
@@ -14,20 +14,7 @@ import { ColorFilterController } from '../../controllers/color-filter-controller
   styleUrl: './devices.component.css',
 })
 export class DevicesComponent implements OnInit {
-  colors: IColor[] = [];
-  protected readonly colorFilterController = new ColorFilterController();
+  protected readonly deviceFilterController = new DeviceFilterController();
 
-  ngOnInit(): void {
-    this.colors = this.getAllWarmColors();
-  }
-
-  getAllWarmColors = () => {
-    const warmColors: IColor[] = [];
-    for (const color of colorOptions) {
-      if (color.temperature === 'warm') {
-        warmColors.push(color);
-      }
-    }
-    return warmColors.sort(colorNameAlphabeticSorter);
-  };
+  ngOnInit(): void {}
 }
