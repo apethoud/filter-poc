@@ -1,16 +1,12 @@
 <div class="page-container">
+  <div class="title-container">
+    <div class="title-text">Devices</div>
+  </div>
   <div class="page-content">
-    <div class="title-container">
-      <div class="title-text">Devices</div>
-    </div>
     <div class="content-container">
-      <!-- @for (color of colors; track color.id) {
-      <app-color-swatch [color]="color" />
-      } -->
       <app-device-filters-used [filterController]="deviceFilterController" />
-      <app-device-filter-menu [filterController]="deviceFilterController" />
       <app-device-list [filterController]="deviceFilterController" />
     </div>
+    <app-device-filter-menu [filterController]="deviceFilterController" />
   </div>
-  <!-- <app-filter-menu [filterList]="deviceFilterController.warmColorsFilterList" /> -->
 </div>

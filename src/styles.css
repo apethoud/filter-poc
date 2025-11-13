@@ -9,14 +9,13 @@
 .root-right-pane {
   flex-grow: 1;
   background-color: white;
-  margin-left: 8px;
 }
 
 /* Nav */
 .nav-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   border: 1px solid black;
   padding: 8px;
   width: 300px;
@@ -39,7 +38,14 @@
 
 /* Content */
 .page-container {
+}
+
+.page-content {
   display: flex;
+}
+
+.content-container {
+  flex-grow: 1;
 }
 
 .title-container {
@@ -83,9 +89,10 @@ option::checkmark {
 .filter-menu-container {
   display: flex;
   flex-direction: column;
-  height: 100vh;
+  height: 100%;
   width: 300px;
   border: 1px solid black;
+  margin-top: 8px;
   padding: 16px;
   background-color: #f5f5f5;
 }
