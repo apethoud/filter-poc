@@ -1,5 +1,23 @@
 import { Observable } from 'rxjs';
 
+export interface ISite {
+  id: number;
+  name: string;
+}
+
+export interface IZone {
+  id: number;
+  siteId: number;
+  name: string;
+}
+
+export interface IDevice {
+  id: number;
+  siteId: number;
+  zoneId: number;
+  name: string;
+}
+
 export interface IStringFilterOption {
   id: number;
   value: string;

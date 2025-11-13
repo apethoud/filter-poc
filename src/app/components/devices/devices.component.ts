@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { colorOptions } from '../../mock-api/api';
+// import { colorOptions } from '../../mock-api/api';
 import { IColor } from '../../models/color';
 import { ColorSwatchComponent } from '../color-swatch/color-swatch.component';
 import { colorNameAlphabeticSorter } from '../../utils/utils';

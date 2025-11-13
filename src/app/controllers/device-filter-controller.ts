@@ -5,7 +5,7 @@ import {
   FilterTypeEnum,
   IStringFilterOption,
 } from '../models/filter';
-import { brightnessOptions } from '../mock-api/api';
+// import { brightnessOptions } from '../mock-api/api';
 
 export class DeviceFilterController {
   // allBrightnessOptions$: Observable<IStringFilterOption[]>;
