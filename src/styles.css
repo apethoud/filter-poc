@@ -64,14 +64,15 @@
   padding: 24px;
 }
 
-.color-swatch-container {
+.device-card-container {
   display: inline-block;
   margin: 4px;
+  border: 2px solid black;
   border-radius: 8px;
-  padding: 8px;
+  padding: 16px;
 }
 
-.color-swatch-text {
+.device-card-text {
   font-size: 24px;
   font-family: sans-serif;
 }

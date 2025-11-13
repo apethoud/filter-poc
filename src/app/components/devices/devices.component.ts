@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 // import { colorOptions } from '../../mock-api/api';
 import { IColor } from '../../models/color';
-import { ColorSwatchComponent } from '../color-swatch/color-swatch.component';
 import { colorNameAlphabeticSorter } from '../../utils/utils';
 import { DeviceFilterMenuComponent } from '../device-filter-menu/device-filter-menu.component';
 import { DeviceFilterController } from '../../controllers/device-filter-controller';
@@ -12,7 +11,6 @@ import { DeviceListComponent } from '../device-list/device-list.component';
   selector: 'app-color',
   standalone: true,
   imports: [
-    ColorSwatchComponent,
     DeviceFilterMenuComponent,
     DeviceFiltersUsedComponent,
     DeviceListComponent,

@@ -18,42 +18,47 @@ export interface IDevice {
   name: string;
 }
 
-export interface IStringFilterOption {
-  id: number;
-  value: string;
-  name: string;
+export interface IFilterParams {
+  site: ISite[] | null;
+  zone: IZone[] | null;
 }
 
-export interface IBooleanFilterOption {
-  id: number;
-  value: boolean;
-  name: string;
-}
+// export interface IStringFilterOption {
+//   id: number;
+//   value: string;
+//   name: string;
+// }
 
-export enum FilterTypeEnum {
-  Brightness = 'Brightness',
-  Hue = 'Hue',
-  NamedAfterAFlower = 'Named After a Flower',
-  NamedAfterAFood = 'Named After a Food',
-}
+// export interface IBooleanFilterOption {
+//   id: number;
+//   value: boolean;
+//   name: string;
+// }
 
-export enum FilterKind {
-  String = 'string',
-  Boolean = 'boolean',
-}
+// export enum FilterTypeEnum {
+//   Brightness = 'Brightness',
+//   Hue = 'Hue',
+//   NamedAfterAFlower = 'Named After a Flower',
+//   NamedAfterAFood = 'Named After a Food',
+// }
 
-export type FilterObservables =
-  | {
-      kind: FilterKind.String;
-      optionsObservable: Observable<IStringFilterOption[]>;
-      selectedOptionsObservable: Observable<number[]>;
-      selectedOptionsUpdater: (selectedIndexes: number[]) => void;
-    }
-  | {
-      kind: FilterKind.Boolean;
-      optionsObservable: Observable<IBooleanFilterOption[]>;
-      selectedOptionsObservable: Observable<number[]>;
-      selectedOptionsUpdater: (selectedIndexes: number[]) => void;
-    };
+// export enum FilterKind {
+//   String = 'string',
+//   Boolean = 'boolean',
+// }
 
-export type FilterListType = Map<FilterTypeEnum, FilterObservables>;
+// export type FilterObservables =
+//   | {
+//       kind: FilterKind.String;
+//       optionsObservable: Observable<IStringFilterOption[]>;
+//       selectedOptionsObservable: Observable<number[]>;
+//       selectedOptionsUpdater: (selectedIndexes: number[]) => void;
+//     }
+//   | {
+//       kind: FilterKind.Boolean;
+//       optionsObservable: Observable<IBooleanFilterOption[]>;
+//       selectedOptionsObservable: Observable<number[]>;
+//       selectedOptionsUpdater: (selectedIndexes: number[]) => void;
+//     };
+
+// export type FilterListType = Map<FilterTypeEnum, FilterObservables>;

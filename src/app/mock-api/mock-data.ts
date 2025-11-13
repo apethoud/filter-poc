@@ -1,9 +1,9 @@
 import { IColor } from '../models/color';
 import {
-  IBooleanFilterOption,
+  // IBooleanFilterOption,
   IDevice,
   ISite,
-  IStringFilterOption,
+  // IStringFilterOption,
   IZone,
 } from '../models/filter';
 

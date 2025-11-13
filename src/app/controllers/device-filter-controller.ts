@@ -1,13 +1,18 @@
 import { Observable, BehaviorSubject } from 'rxjs';
-import {
-  FilterKind,
-  FilterListType,
-  FilterTypeEnum,
-  IStringFilterOption,
-} from '../models/filter';
+import { IFilterParams } from '../models/filter';
+// import {
+//   FilterKind,
+//   FilterListType,
+//   FilterTypeEnum,
+//   IStringFilterOption,
+// } from '../models/filter';
 // import { brightnessOptions } from '../mock-api/api';
 
 export class DeviceFilterController {
+  filterParams: IFilterParams = {
+    site: null,
+    zone: null,
+  };
   // allBrightnessOptions$: Observable<IStringFilterOption[]>;
   // selectedBrightnessOptions$: Observable<number[]>;
   // private readonly _allBrightnessOptionsSubject = new BehaviorSubject<

@@ -1,1 +1,5 @@
-<p>device-list works!</p>
+@for (device of devices; track device.id) {
+<div class="device-card-container">
+  <div class="device-card-text">{{ device.name }}</div>
+</div>
+}

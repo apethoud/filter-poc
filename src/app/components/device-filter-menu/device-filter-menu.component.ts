@@ -1,10 +1,10 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { BrightnessFilterComponent } from '../brightness-filter/brightness-filter.component';
-import {
-  FilterListType,
-  FilterObservables,
-  FilterTypeEnum,
-} from '../../models/filter';
+// import {
+//   FilterListType,
+//   FilterObservables,
+//   FilterTypeEnum,
+// } from '../../models/filter';
 import { Subject } from 'rxjs';
 import { DeviceFilterController } from '../../controllers/device-filter-controller';
 
