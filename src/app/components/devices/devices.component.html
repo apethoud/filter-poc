@@ -7,8 +7,8 @@
       <!-- @for (color of colors; track color.id) {
       <app-color-swatch [color]="color" />
       } -->
-      <app-device-filters-used />
-      <app-device-list />
+      <app-device-filters-used [filterController]="deviceFilterController" />
+      <app-device-list [filterController]="deviceFilterController" />
     </div>
   </div>
   <!-- <app-filter-menu [filterList]="deviceFilterController.warmColorsFilterList" /> -->
