@@ -1,7 +1,7 @@
 <div class="page-container">
   <div class="page-content">
     <div class="title-container">
-      <div class="title-text">Warm Colors</div>
+      <div class="title-text">Colors</div>
     </div>
     <div class="content-container">
       @for (color of colors; track color.id) {
@@ -9,7 +9,5 @@
       }
     </div>
   </div>
-  <app-filter-menu
-    [filterList]="warmColorsFilterController.warmColorsFilterList"
-  />
+  <app-filter-menu [filterList]="colorFilterController.warmColorsFilterList" />
 </div>

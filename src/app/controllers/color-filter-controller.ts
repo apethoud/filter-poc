@@ -7,7 +7,7 @@ import {
 } from '../models/filter';
 import { brightnessOptions } from '../mock-api/api';
 
-export class WarmColorsFilterController {
+export class ColorFilterController {
   allBrightnessOptions$: Observable<IStringFilterOption[]>;
   selectedBrightnessOptions$: Observable<number[]>;
   private readonly _allBrightnessOptionsSubject = new BehaviorSubject<

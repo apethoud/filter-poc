@@ -4,19 +4,18 @@ import { IColor } from '../../models/color';
 import { ColorSwatchComponent } from '../color-swatch/color-swatch.component';
 import { colorNameAlphabeticSorter } from '../../utils/utils';
 import { FilterMenuComponent } from '../filter-menu/filter-menu.component';
-import { WarmColorsFilterController } from '../../controllers/warm-colors-filter-controller';
+import { ColorFilterController } from '../../controllers/color-filter-controller';
 
 @Component({
-  selector: 'app-warm-colors',
+  selector: 'app-color',
   standalone: true,
   imports: [ColorSwatchComponent, FilterMenuComponent],
-  templateUrl: './warm-colors.component.html',
-  styleUrl: './warm-colors.component.css',
+  templateUrl: './color.component.html',
+  styleUrl: './color.component.css',
 })
-export class WarmColorsComponent implements OnInit {
+export class ColorComponent implements OnInit {
   colors: IColor[] = [];
-  protected readonly warmColorsFilterController =
-    new WarmColorsFilterController();
+  protected readonly colorFilterController = new ColorFilterController();
 
   ngOnInit(): void {
     this.colors = this.getAllWarmColors();
