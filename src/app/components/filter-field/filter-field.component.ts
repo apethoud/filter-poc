@@ -6,15 +6,22 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 // } from '../../models/filter';
 import { Observable, Subscription } from 'rxjs';
 import { FormsModule } from '@angular/forms';
+import { FilterOptionType } from '../../models/filter';
 
 @Component({
-  selector: 'app-brightness-filter',
+  selector: 'app-filter-field',
   standalone: true,
   imports: [FormsModule],
-  templateUrl: './brightness-filter.component.html',
-  styleUrl: './brightness-filter.component.css',
+  templateUrl: './filter-field.component.html',
+  styleUrl: './filter-field.component.css',
 })
-export class BrightnessFilterComponent implements OnInit, OnDestroy {
+export class FilterFieldComponent implements OnInit, OnDestroy {
+  @Input({ required: true }) name?: string;
+  @Input({ required: true }) options?: FilterOptionType[];
+  @Input({ required: true }) selectedValue?: FilterOptionType | null;
+  // @Input({ required: true }) saveSelectedValue?: (val: FilterOptionType) => void;
+  // @Input({ required: true }) triggerSave$: Observable<void>;
+
   // @Input({ required: true }) filterData?: FilterObservables;
   // @Input({ required: true }) triggerSave?: Observable<void>;
   // filterName: string = 'Brightness';

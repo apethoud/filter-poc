@@ -1,5 +1,6 @@
 import { Observable, BehaviorSubject } from 'rxjs';
-import { IFilterParams } from '../models/filter';
+import { IFilterOptions, IFilterParams } from '../models/filter';
+import { getSites, getZones } from '../mock-api/mock-api';
 // import {
 //   FilterKind,
 //   FilterListType,
@@ -13,6 +14,16 @@ export class DeviceFilterController {
     site: null,
     zone: null,
   };
+
+  filterOptions: IFilterOptions = {
+    site: [],
+    zone: [],
+  };
+
+  constructor() {
+    this.filterOptions.site = getSites();
+    this.filterOptions.zone = getZones();
+  }
   // allBrightnessOptions$: Observable<IStringFilterOption[]>;
   // selectedBrightnessOptions$: Observable<number[]>;
   // private readonly _allBrightnessOptionsSubject = new BehaviorSubject<

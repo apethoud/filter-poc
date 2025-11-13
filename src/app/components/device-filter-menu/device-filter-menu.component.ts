@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { BrightnessFilterComponent } from '../brightness-filter/brightness-filter.component';
+import { FilterFieldComponent } from '../filter-field/filter-field.component';
 // import {
 //   FilterListType,
 //   FilterObservables,
@@ -11,7 +11,7 @@ import { DeviceFilterController } from '../../controllers/device-filter-controll
 @Component({
   selector: 'app-device-filter-menu',
   standalone: true,
-  imports: [BrightnessFilterComponent],
+  imports: [FilterFieldComponent],
   templateUrl: './device-filter-menu.component.html',
   styleUrl: './device-filter-menu.component.css',
 })

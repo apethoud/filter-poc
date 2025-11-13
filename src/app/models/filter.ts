@@ -1,5 +1,10 @@
 import { Observable } from 'rxjs';
 
+export enum FilterTypeEnum {
+  Site = 'site',
+  Zone = 'zone',
+}
+
 export interface ISite {
   id: number;
   name: string;
@@ -19,9 +24,16 @@ export interface IDevice {
 }
 
 export interface IFilterParams {
-  site: ISite[] | null;
-  zone: IZone[] | null;
+  site: ISite | null;
+  zone: IZone | null;
 }
+
+export interface IFilterOptions {
+  site: ISite[];
+  zone: IZone[];
+}
+
+export type FilterOptionType = ISite | IZone;
 
 // export interface IStringFilterOption {
 //   id: number;
