@@ -10,10 +10,10 @@ import { ColorFilterController } from '../../controllers/color-filter-controller
   selector: 'app-color',
   standalone: true,
   imports: [ColorSwatchComponent, FilterMenuComponent],
-  templateUrl: './color.component.html',
-  styleUrl: './color.component.css',
+  templateUrl: './devices.component.html',
+  styleUrl: './devices.component.css',
 })
-export class ColorComponent implements OnInit {
+export class DevicesComponent implements OnInit {
   colors: IColor[] = [];
   protected readonly colorFilterController = new ColorFilterController();
 
