@@ -10,10 +10,10 @@ import { getSites, getZones } from '../mock-api/mock-api';
 // import { brightnessOptions } from '../mock-api/api';
 
 export class DeviceFilterController {
-  filterParams: IFilterParams = {
-    site: null,
-    zone: null,
-  };
+  // filterParams: IFilterParams = {
+  //   site: null,
+  //   zone: null,
+  // };
 
   pendingFilterParams: IFilterParams = {
     site: null,
@@ -24,6 +24,10 @@ export class DeviceFilterController {
     site: [],
     zone: [],
   };
+  private readonly _filterParams$ = new BehaviorSubject<IFilterParams>(
+    this.pendingFilterParams
+  );
+  readonly filterParams$ = this._filterParams$.asObservable();
 
   constructor() {
     this.filterOptions.site = getSites();
@@ -31,8 +35,8 @@ export class DeviceFilterController {
   }
 
   savePendingFilterParams = () => {
-    this.filterParams = structuredClone(this.pendingFilterParams);
-    console.log('this.filterParams: ', this.filterParams);
+    // this.filterParams = structuredClone(this.pendingFilterParams);
+    this._filterParams$.next(this.pendingFilterParams);
   };
 
   // setFilterParams = (params: IFilterParams) => {
