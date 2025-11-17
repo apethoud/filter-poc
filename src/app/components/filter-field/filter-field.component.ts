@@ -6,7 +6,7 @@ import { Component, Input, OnDestroy, OnInit } from '@angular/core';
 // } from '../../models/filter';
 import { Observable, Subscription } from 'rxjs';
 import { FormsModule } from '@angular/forms';
-import { FilterOptionType } from '../../models/filter';
+// import { FilterOptionType } from '../../models/filter';
 
 @Component({
   selector: 'app-filter-field',
@@ -17,8 +17,11 @@ import { FilterOptionType } from '../../models/filter';
 })
 export class FilterFieldComponent implements OnInit, OnDestroy {
   @Input({ required: true }) name?: string;
-  @Input({ required: true }) options?: FilterOptionType[];
-  @Input({ required: true }) selectedValue?: FilterOptionType | null;
+  @Input({ required: true }) options?: string[];
+  @Input({ required: true }) selectedValue?: string | null;
+  @Input({ required: true }) setSelectedValue?: (val: string) => void;
+  // ################## How can I store the selected site value (before form submission) in a way that the zone field can access and respond to it?
+
   // @Input({ required: true }) saveSelectedValue?: (val: FilterOptionType) => void;
   // @Input({ required: true }) triggerSave$: Observable<void>;
 
@@ -38,6 +41,14 @@ export class FilterFieldComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     //   this._subs.unsubscribe();
   }
+
+  handleFilterFieldChange = (event: Event) => {
+    if (!this.setSelectedValue) {
+      return;
+    }
+    const target = event.target as HTMLSelectElement;
+    this.setSelectedValue(target.value);
+  };
 
   // setupFilter = () => {
   //   if (!this.filterData || this.filterData.kind !== 'string') {

@@ -15,6 +15,11 @@ export class DeviceFilterController {
     zone: null,
   };
 
+  pendingFilterParams: IFilterParams = {
+    site: null,
+    zone: null,
+  };
+
   filterOptions: IFilterOptions = {
     site: [],
     zone: [],
@@ -24,6 +29,15 @@ export class DeviceFilterController {
     this.filterOptions.site = getSites();
     this.filterOptions.zone = getZones();
   }
+
+  setFilterParams = (params: IFilterParams) => {
+    this.filterParams = params;
+  };
+
+  setPendingFilterParams = (params: IFilterParams) => {
+    this.pendingFilterParams = params;
+  };
+
   // allBrightnessOptions$: Observable<IStringFilterOption[]>;
   // selectedBrightnessOptions$: Observable<number[]>;
   // private readonly _allBrightnessOptionsSubject = new BehaviorSubject<

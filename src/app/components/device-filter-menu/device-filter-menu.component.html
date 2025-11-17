@@ -1,15 +1,16 @@
 <div class="filter-menu-container">
-  <!-- <button (click)="triggerSaveAction()">Save</button> -->
-
   <app-filter-field
     name="Site"
-    [options]="filterController?.filterOptions?.site"
-    [selectedValue]="filterController?.filterParams?.site"
+    [options]="siteOptions"
+    [selectedValue]="selectedSiteName"
+    [setSelectedValue]="setPendingSelectedSiteToController"
   />
 
   <app-filter-field
     name="Zone"
-    [options]="filterController?.filterOptions?.zone"
-    [selectedValue]="filterController?.filterParams?.zone"
+    [options]="zoneOptions"
+    [selectedValue]="selectedZoneName"
+    [setSelectedValue]="setPendingSelectedZoneToController"
   />
+  <button (click)="triggerSaveAction()">Save</button>
 </div>

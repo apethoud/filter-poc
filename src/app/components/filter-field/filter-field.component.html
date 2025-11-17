@@ -1,8 +1,12 @@
-<label class="filter-dropdown-label">{{ name }}</label>
-<select class="filter-dropdown" [(ngModel)]="selectedValue">
-  @for (option of options; track option.id) {
-  <option [value]="$index">
-    {{ option.name }}
+<label class="filter-dropdown-label">{{ selectedValue }}</label>
+<select
+  class="filter-dropdown"
+  [ngModel]="selectedValue"
+  (change)="handleFilterFieldChange($event)"
+>
+  @for (option of options; track option) {
+  <option [value]="option">
+    {{ option }}
   </option>
   }
 </select>

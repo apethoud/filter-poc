@@ -1,4 +1,5 @@
 import { IColor } from '../models/color';
+import { ISite, IZone } from '../models/filter';
 
 export const colorNameAlphabeticSorter = (a: IColor, b: IColor) => {
   const nameA = a.name.toLowerCase();
@@ -13,4 +14,52 @@ export const colorNameAlphabeticSorter = (a: IColor, b: IColor) => {
   }
 
   return 0;
+};
+
+// export const isSite = (potentialSite: any) => {
+//   return potentialSite.id && potentialSite.name && !potentialSite.siteId;
+// };
+
+// export const isZone = (potentialZone: any) => {
+//   return potentialZone.id && potentialZone.name && potentialZone.siteId;
+// };
+
+// Site Mappers
+
+export const iSiteArrayToSiteNameStringArrayMapper = (
+  sites: ISite[]
+): string[] => {
+  return sites.map((site) => site.name);
+};
+
+export const iSiteToSiteNameStringMapper = (site: ISite): string => {
+  return site.name;
+};
+
+export const siteNameStringToISiteMapper = (
+  siteName: string,
+  sites: ISite[]
+): ISite | null => {
+  const site = sites.find((s) => s.name === siteName);
+  return site || null;
+};
+
+// Zone Mappers
+
+export const iZoneArrayToZoneNameStringArrayMapper = (
+  zones: IZone[]
+): string[] => {
+  return zones.map((zone) => zone.name);
+};
+
+export const iZoneToZoneNameStringMapper = (zone: IZone): string => {
+  return zone.name;
+};
+
+export const zoneNameStringToIZoneMapper = (
+  zoneName: string,
+  zones: IZone[]
+): IZone | null => {
+  const zone = zones.find((z) => z.name === zoneName);
+  return zone || null;
 };
