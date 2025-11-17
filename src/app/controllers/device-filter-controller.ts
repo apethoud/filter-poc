@@ -30,13 +30,18 @@ export class DeviceFilterController {
     this.filterOptions.zone = getZones();
   }
 
-  setFilterParams = (params: IFilterParams) => {
-    this.filterParams = params;
+  savePendingFilterParams = () => {
+    this.filterParams = structuredClone(this.pendingFilterParams);
+    console.log('this.filterParams: ', this.filterParams);
   };
 
-  setPendingFilterParams = (params: IFilterParams) => {
-    this.pendingFilterParams = params;
-  };
+  // setFilterParams = (params: IFilterParams) => {
+  //   this.filterParams = params;
+  // };
+
+  // setPendingFilterParams = (params: IFilterParams) => {
+  //   this.pendingFilterParams = params;
+  // };
 
   // allBrightnessOptions$: Observable<IStringFilterOption[]>;
   // selectedBrightnessOptions$: Observable<number[]>;

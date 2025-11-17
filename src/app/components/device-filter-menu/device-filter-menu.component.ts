@@ -152,6 +152,10 @@ export class DeviceFilterMenuComponent implements OnInit {
   // }
 
   triggerSaveAction = (): void => {
+    if (!this.filterController) {
+      return;
+    }
+    this.filterController.savePendingFilterParams();
     // this.triggerSave$.next();
   };
 }
