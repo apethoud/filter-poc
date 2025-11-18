@@ -1,7 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-// import { colorOptions } from '../../mock-api/api';
-import { IColor } from '../../models/color';
-import { colorNameAlphabeticSorter } from '../../utils/utils';
 import { DeviceFilterMenuComponent } from '../device-filter-menu/device-filter-menu.component';
 import { DeviceFilterController } from '../../controllers/device-filter-controller';
 import { DeviceFiltersUsedComponent } from '../device-filters-used/device-filters-used.component';
