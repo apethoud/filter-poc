@@ -3,9 +3,6 @@
   display: flex;
 }
 
-.root-left-pane {
-}
-
 .root-right-pane {
   flex-grow: 1;
   background-color: white;
@@ -37,9 +34,6 @@
 }
 
 /* Content */
-.page-container {
-}
-
 .page-content {
   display: flex;
 }
