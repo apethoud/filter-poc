@@ -17,7 +17,10 @@ export class DeviceListComponent implements OnChanges, OnInit, OnDestroy {
   private readonly _subs: Subscription = new Subscription();
 
   ngOnInit(): void {
-    const filterParamsSub = this.filterController?.filterParams$.subscribe(
+    if (!this.filterController) {
+      return;
+    }
+    const filterParamsSub = this.filterController.filterParams$.subscribe(
       (params) => {
         this.updateDeviceList(params);
       }

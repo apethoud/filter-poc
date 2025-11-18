@@ -1,5 +1,12 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { DeviceFilterController } from '../../controllers/device-filter-controller';
+import { Subscription } from 'rxjs';
+import { IFilterParams } from '../../models/filter';
+
+interface IFilter {
+  key: string;
+  value: string;
+}
 
 @Component({
   selector: 'app-device-filters-used',
@@ -8,6 +15,39 @@ import { DeviceFilterController } from '../../controllers/device-filter-controll
   templateUrl: './device-filters-used.component.html',
   styleUrl: './device-filters-used.component.css',
 })
-export class DeviceFiltersUsedComponent {
+export class DeviceFiltersUsedComponent implements OnInit {
   @Input({ required: true }) filterController?: DeviceFilterController;
+  private readonly _subs: Subscription = new Subscription();
+  filters: IFilter[] = [];
+
+  ngOnInit(): void {
+    if (!this.filterController) {
+      return;
+    }
+    this.filterController.filterParams$.subscribe((params: IFilterParams) => {
+      console.log('UUUUU params: ', params);
+      if (!params) {
+        return;
+      }
+      this.updateFilters(params);
+    });
+  }
+
+  updateFilters = (params: IFilterParams) => {
+    console.log('VVVVV params: ', params);
+    const updatedFilters: IFilter[] = [];
+    for (const [key, value] of Object.entries(params)) {
+      console.log('key: ', key);
+      console.log('value: ', value);
+      console.log('-----');
+      if (!value) {
+        continue;
+      }
+      updatedFilters.push({
+        key,
+        value: value.name,
+      });
+    }
+    this.filters = updatedFilters;
+  };
 }

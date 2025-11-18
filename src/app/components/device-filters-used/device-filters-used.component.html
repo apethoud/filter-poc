@@ -1,1 +1,4 @@
-<p>device-filters-used works!</p>
+@for (filter of filters; track filter) {
+<div>{{ filter.key }}</div>
+<div>{{ filter.value }}</div>
+}
