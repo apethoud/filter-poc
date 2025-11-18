@@ -111,3 +111,21 @@ option::checkmark {
   font-size: 24px;
   width: 100%;
 }
+
+/* Device filters used */
+
+.device-filters-used-container {
+  display: flex;
+}
+
+.filter-pill-container {
+  padding: 8px 16px;
+  margin: 16px;
+  border-radius: 48px;
+  border: 2px solid black;
+}
+
+.filter-pill-text {
+  font-size: 24px;
+  font-family: sans-serif;
+}

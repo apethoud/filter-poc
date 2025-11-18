@@ -16,14 +16,6 @@ export const colorNameAlphabeticSorter = (a: IColor, b: IColor) => {
   return 0;
 };
 
-// export const isSite = (potentialSite: any) => {
-//   return potentialSite.id && potentialSite.name && !potentialSite.siteId;
-// };
-
-// export const isZone = (potentialZone: any) => {
-//   return potentialZone.id && potentialZone.name && potentialZone.siteId;
-// };
-
 // Site Mappers
 
 export const iSiteArrayToSiteNameStringArrayMapper = (

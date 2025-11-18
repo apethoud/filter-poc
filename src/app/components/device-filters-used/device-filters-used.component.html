@@ -1,4 +1,7 @@
-@for (filter of filters; track filter) {
-<div>{{ filter.key }}</div>
-<div>{{ filter.value }}</div>
-}
+<div class="device-filters-used-container">
+  @for (filter of filters; track filter) {
+  <div class="filter-pill-container">
+    <div class="filter-pill-text">{{ filter.key }}: {{ filter.value }}</div>
+  </div>
+  }
+</div>
