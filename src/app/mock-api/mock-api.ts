@@ -10,7 +10,6 @@ export const getZones = () => {
 };
 
 export const getDevices = (filterParams: IFilterParams) => {
-  console.log('filterParams: ', filterParams);
   let devices = mockDataDevices;
   if (!filterParams) {
     return devices;

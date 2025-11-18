@@ -1,11 +1,4 @@
-import { IColor } from '../models/color';
-import {
-  // IBooleanFilterOption,
-  IDevice,
-  ISite,
-  // IStringFilterOption,
-  IZone,
-} from '../models/filter';
+import { IDevice, ISite, IZone } from '../models/filter';
 
 export const sites: ISite[] = [
   {
