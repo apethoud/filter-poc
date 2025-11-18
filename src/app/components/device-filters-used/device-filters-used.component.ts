@@ -25,7 +25,6 @@ export class DeviceFiltersUsedComponent implements OnInit {
       return;
     }
     this.filterController.filterParams$.subscribe((params: IFilterParams) => {
-      console.log('UUUUU params: ', params);
       if (!params) {
         return;
       }
@@ -34,12 +33,8 @@ export class DeviceFiltersUsedComponent implements OnInit {
   }
 
   updateFilters = (params: IFilterParams) => {
-    console.log('VVVVV params: ', params);
     const updatedFilters: IFilter[] = [];
     for (const [key, value] of Object.entries(params)) {
-      console.log('key: ', key);
-      console.log('value: ', value);
-      console.log('-----');
       if (!value) {
         continue;
       }
